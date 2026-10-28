@@ -1,4 +1,4 @@
-lesson: 01:57
-revision: 01:57
+lesson: 02:15
+revision: 02:15
 link: https://www.youtube.com/watch?v=iYOz165wGkQ&list=PL6QREj8te1P6wX9m5KnicnDVEucbOPsqR
 start date: 28-09-26

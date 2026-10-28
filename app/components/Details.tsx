@@ -107,9 +107,11 @@ const CategoryContent = ({
 };
 
 const Details = ({ feedback }: { feedback: Feedback }) => {
+  
   return (
     <div className="flex flex-col gap-4 w-full">
       <Accordion>
+        
         <AccordionItem id="tone-style">
           <AccordionHeader itemId="tone-style">
             <CategoryHeader
@@ -121,6 +123,7 @@ const Details = ({ feedback }: { feedback: Feedback }) => {
             <CategoryContent tips={feedback.toneAndStyle.tips} />
           </AccordionContent>
         </AccordionItem>
+
         <AccordionItem id="content">
           <AccordionHeader itemId="content">
             <CategoryHeader
@@ -132,6 +135,7 @@ const Details = ({ feedback }: { feedback: Feedback }) => {
             <CategoryContent tips={feedback.content.tips} />
           </AccordionContent>
         </AccordionItem>
+
         <AccordionItem id="structure">
           <AccordionHeader itemId="structure">
             <CategoryHeader
@@ -143,6 +147,7 @@ const Details = ({ feedback }: { feedback: Feedback }) => {
             <CategoryContent tips={feedback.structure.tips} />
           </AccordionContent>
         </AccordionItem>
+
         <AccordionItem id="skills">
           <AccordionHeader itemId="skills">
             <CategoryHeader
@@ -154,6 +159,7 @@ const Details = ({ feedback }: { feedback: Feedback }) => {
             <CategoryContent tips={feedback.skills.tips} />
           </AccordionContent>
         </AccordionItem>
+        
       </Accordion>
     </div>
   );

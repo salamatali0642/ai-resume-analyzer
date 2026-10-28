@@ -1,12 +1,7 @@
 import { cn } from "~/lib/utils";
 
-const ATS = ({
-  score,
-  suggestions,
-}: {
-  score: number;
-  suggestions: { type: "good" | "improve"; tip: string }[];
-}) => {
+const ATS = ({score, suggestions}: {score: number; suggestions: { type: "good" | "improve"; tip: string }[];}) => {
+  
   return (
     <div
       className={cn(
@@ -32,6 +27,7 @@ const ATS = ({
         />
         <p className="text-2xl font-semibold">ATS Score - {score}/100</p>
       </div>
+
       <div className="flex flex-col gap-2">
         <p className="font-medium text-xl">
           How well does your resume pass through Applicant Tracking Systems?
@@ -40,6 +36,7 @@ const ATS = ({
           Your resume was scanned like an employer would. Here's how it
           performed:
         </p>
+        
         {suggestions.map((suggestion, index) => (
           <div className="flex flex-row gap-2 items-center" key={index}>
             <img
@@ -54,11 +51,13 @@ const ATS = ({
             <p className="text-lg text-gray-500">{suggestion.tip}</p>
           </div>
         ))}
+        
         <p className="text-lg text-gray-500">
           Want a better score? Improve your resume by applying the suggestions
           listed below.
         </p>
       </div>
+
     </div>
   );
 };
