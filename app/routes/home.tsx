@@ -24,12 +24,12 @@ export default function Home() {
   }, [auth.isAuthenticated])
 
   useEffect(() => {
-    const loadResumes: ()=> Promise<void> = async()=>{
+    const loadResumes: () => Promise<void> = async () => {
       setLoadingResumes(true);
 
       const resumes = (await kv.list('resume:*', true)) as KVItem[];
 
-      const parsedResumes: any = resumes?.map((resume)=>(
+      const parsedResumes: any = resumes?.map((resume) => (
         JSON.parse(resume.value) as Resume
       ))
 
@@ -47,16 +47,16 @@ export default function Home() {
     <section className="main-section">
       <div className="page-heading py-16">
         <h1>Track Your Applications & Resume Ratings </h1>
-        {!loadingResumes && resumes?.length ===0 ? (
-          <h2>No resumes found. Upload your first resume to get feedback.</h2>  
-        ): (
+        {!loadingResumes && resumes?.length === 0 ? (
+          <h2>No resumes found. Upload your first resume to get feedback.</h2>
+        ) : (
           <h2>Review your submissions and check AI-powered feedback.</h2>
         )}
       </div>
 
-      { loadingResumes && (
+      {loadingResumes && (
         <div className="flex flex-col items-center justify-center">
-            <img src="/resumes/resume-scan-2.gif" className="w-[200px]" alt="" />
+          <img src="/resumes/resume-scan-2.gif" className="w-[200px]" alt="" />
         </div>
       )}
 
@@ -71,7 +71,7 @@ export default function Home() {
       {!loadingResumes && resumes?.length === 0 && (
         <div className="flex flex-col items-center justify-center mt-10 gap-4">
           <Link to="/upload" className="primary-button w-fit text-xl font-semibold">
-          Upload Resume
+            Upload Resume
           </Link>
         </div>
       )}
